@@ -1,28 +1,36 @@
-var myApp = angular.module('myApp' , []);
+'use strict';
 
-myApp.controller('AppCtrl',['$scope','$http', function($scope,$http){
-    console.log("Hello world from controller");
+var myApp = angular.module('myApp', []);
 
-var refresh = function(){
-$http.get('/contactlist').success(function(response){
-    console.log("I got the data i requested");
-    $scope.contactlist = response;
-    $scope.contact = "";
-    });
-};
+myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 
-refresh();
+  console.log("Hello world from controller");
 
-$scope.addContact = function() {
+  var refresh = function () {
+    $http.get('/api/contact')
+      .success(function (res) {
+        $scope.contactlist = res;
+      });
+  };
+
+  refresh();
+
+  $scope.addContact = function () {
     console.log($scope.contact);
-    $http.post('/contactlist' , $scope.contact).success(function(response){
-        console.log(response);
-        refresh();
-    });
-};
+    $http.post('/api/contact', $scope.contact)
+      .success(function (res) {
+        $scope.contactlist.push(res);
+      });
+  };
 
-$scope.removeContact = function(id){
-    console.log(id);
-};
+  $scope.removeContact = function (id) {
+    $http.delete('/api/contact/' + id)
+      .success(function () {
+        for (var i = $scope.contactlist.length - 1; i >= 0; i--) {
+          if ($scope.contactlist[i]._id === id)
+            $scope.contactlist.splice(i, 1);
+        }
+      });
+  };
 
 }]);

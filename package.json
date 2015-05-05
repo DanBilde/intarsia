@@ -12,10 +12,10 @@
     "mongojs": "^0.18.2",
     "morgan": "^1.5.2",
     "serve-favicon": "^2.2.0"
-     "start": "node ./bin/www"
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dan Mihai Bilde <mihaibilde@gmail.com>",

@@ -4,7 +4,7 @@ var myApp = angular.module('myApp', []);
 
 myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 
-  console.log("Hello world from controller");
+  console.log('Hello world from controller');
 
   var refresh = function () {
     $http.get('/api/contact')
@@ -31,6 +31,14 @@ myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
             $scope.contactlist.splice(i, 1);
         }
       });
+  };
+
+  $scope.editContact = function(id) {
+
+   $http.get('api/contact/' + id)
+        .success(function(res){
+            $scope.contact = res;
+   });
   };
 
 }]);

@@ -6,49 +6,49 @@ myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 
   console.log('Hello world from controller');
 
-  $scope.contact = {};
+  $scope.product = {};
   $scope.isEditMode = false;
 
   $scope.refresh = function () {
-    $http.get('/api/contact')
+    $http.get('/api/product')
       .success(function (res) {
-        $scope.contactlist = res;
+        $scope.products = res;
       });
   };
 
-  $scope.addContact = function () {
-    console.log($scope.contact);
-    $http.post('/api/contact', $scope.contact)
+  $scope.addProduct = function () {
+    console.log($scope.product);
+    $http.post('/api/product', $scope.product)
       .success(function (res) {
-        $scope.contactlist.push(res);
-        $scope.contact = {};
+        $scope.products.push(res);
+        $scope.product = {};
       });
   };
 
-  $scope.removeContact = function (id) {
-    $http.delete('/api/contact/' + id)
+  $scope.removeProduct = function (id) {
+    $http.delete('/api/product/' + id)
       .success(function () {
-        $scope.contactlist.splice(getDocIdx(id, $scope.contactlist), 1);
+        $scope.products.splice(getDocIdx(id, $scope.products), 1);
       });
   };
 
-  $scope.editContact = function (id) {
-    $scope.contact = angular.copy(getDoc(id, $scope.contactlist));
+  $scope.editProduct = function (id) {
+    $scope.product = angular.copy(getDoc(id, $scope.products));
     $scope.isEditMode = true;
   };
 
-  $scope.updateContact = function () {
-    $http.put('/api/contact/' + $scope.contact._id, $scope.contact)
+  $scope.updateProduct = function () {
+    $http.put('/api/product/' + $scope.product._id, $scope.product)
       .success(function (res) {
-        $scope.contactlist[getDocIdx($scope.contact._id, $scope.contactlist)] =
+        $scope.products[getDocIdx($scope.product._id, $scope.products)] =
           res;
-        $scope.contact = {};
+        $scope.product = {};
         $scope.isEditMode = false;
       });
   };
 
   $scope.cancelEdit = function () {
-    $scope.contact = {};
+    $scope.product = {};
     $scope.isEditMode = false;
   };
 

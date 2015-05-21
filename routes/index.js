@@ -5,7 +5,7 @@ var router = express.Router();
 var appdata = require('../data.json');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('contactlist', ['contactlist']);
+var db = mongojs('products', ['products']);
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -58,7 +58,7 @@ router.get('/products/:productid', function (req, res) {
   });
 });
 
-router.get('/contactlist', function (req, res) {
+router.get('/productlist', function (req, res) {
   return res.render('admin', {
     title: 'Admin',
   });
@@ -68,41 +68,41 @@ router.get('/contactlist', function (req, res) {
  * API routes
  ******************************************/
 
-router.get('/api/contact', function (req, res) {
-    return db.contactlist.find(function (err, contacts) {
+router.get('/api/product', function (req, res) {
+    return db.products.find(function (err, products) {
       if (err)
         return res.status(500)
           .jsonp(err);
 
-      return res.jsonp(contacts);
+      return res.jsonp(products);
     });
   })
-  .post('/api/contact', function (req, res) {
-    return db.contactlist.insert(req.body, function (err, contact) {
+  .post('/api/product', function (req, res) {
+    return db.products.insert(req.body, function (err, product) {
       if (err)
         return res.status(500)
           .jsonp(err);
 
-      res.jsonp(contact);
+      res.jsonp(product);
     });
   });
 
-router.get('/api/contact/:id', function (req, res) {
-    return db.contactlist.find({
+router.get('/api/product/:id', function (req, res) {
+    return db.products.find({
       _id: mongojs.ObjectId(req.params.id)
-    }, function (err, contact) {
+    }, function (err, product) {
       if (err)
         return res.status(500)
           .jsonp(err);
 
-      return res.jsonp(contact);
+      return res.jsonp(product);
     });
   })
-  .put('/api/contact/:id', function (req, res) {
+  .put('/api/product/:id', function (req, res) {
     // make sure we don't interfere with the _id
     delete req.body._id;
 
-    return db.contactlist.update({
+    return db.products.update({
       _id: mongojs.ObjectId(req.params.id)
     }, req.body, function (err, updated) {
       if (err)
@@ -119,8 +119,8 @@ router.get('/api/contact/:id', function (req, res) {
     });
 
   })
-  .delete('/api/contact/:id', function (req, res) {
-    return db.contactlist.remove({
+  .delete('/api/product/:id', function (req, res) {
+    return db.product.remove({
       _id: mongojs.ObjectId(req.params.id)
     }, function (err) {
       if (err) {

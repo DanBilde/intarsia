@@ -1,13 +1,26 @@
 <header>
-    <div class="hero">
-        <section class="layout">
-            <div class="branding>
+
+         <div id="wrapper">
+          <div class="branding">
                 <a href="/">
                     <img src="/images/misc/logo01.gif" alt="Intarsia Logo" >
                 </a>
             </div>
-        </section>
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="images/misc/toystory.jpg"data-transition="fade"/>
+                <img src="images/misc/walle.jpg" data-transition="fade"  />
+                <img src="images/misc/nemo.jpg" data-transition="fade" />
+            </div>
+        </div>
     </div>
+    <script type="text/javascript" src="javascripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.nivo.slider.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
     <div class="navigation">
         <section class="layout">
             <ul class="nav">

@@ -39,7 +39,6 @@
                 <button class="btn btn-danger" ng-click="cancelEdit()">Cancel</button>
               </td>
             </tr>
-
             <tr ng-repeat="product in products track by product._id">
               <td>{{product.name}}</td>
               <td>{{product.description}}</td>
@@ -51,7 +50,6 @@
                 <button class="btn btn-danger" ng-click="removeProduct(product._id)">Remove</button>
               </td>
             </tr>
-
           </tbody>
         </table>
       </div>

@@ -6,6 +6,69 @@ var appdata = require('../data.json');
 var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('products', ['products']);
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+
+var expressSession = require('express-session');
+
+var passport = require('passport');
+var passportLocal = require('passport-local');
+var passportHttp = require('passport-http');
+
+router.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+router.use(cookieParser());
+
+router.use(expressSession({
+      secret: process.env.SESSION_SECRET || 'secret',
+      resave:false,
+      saveUninitialized:false
+  }));
+
+
+router.use(passport.initialize());
+router.use(passport.session());
+
+passport.use(new passportLocal.Strategy(function(username, password, done) {
+     //Pretend this is using a real database!
+
+     if(username === password) {
+
+      done(null, { id: username, name: username});
+     } else {
+      done(null, null);
+     }
+
+}));
+
+passport.serializeUser(function(user, done) {
+   done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  //Query the database or cache here
+  done(null, { id: id , name: id });
+});
+
+function ensureAuthenticated(req, res , next) {
+   if(req.isAuthenticated()) {
+    next();
+   } else {
+        res.send(403);
+   }
+}
+
+router.post('/login', passport.authenticate('local'), function(req,res) {
+    res.redirect('/productlist');
+});
+
+router.get('/logout' , function(req,res) {
+  req.logout();
+  res.redirect('/');
+});
+
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -58,11 +121,19 @@ router.get('/products/:productid', function (req, res) {
   });
 });
 
-router.get('/productlist', function (req, res) {
+router.get('/productlist',  ensureAuthenticated , function (req, res) {
   return res.render('admin', {
     title: 'Admin',
+    isAuthenticated:req.isAuthenticated(),
+    user:req.user
   });
 });
+
+router.get('/login', function(req,res) {
+    res.render('login');
+});
+
+
 
 /*******************************************
  * API routes

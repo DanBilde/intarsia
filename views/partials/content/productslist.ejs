@@ -3,10 +3,10 @@
         <div class="products">
         <% products.forEach(function(item){ %>
       <article class="product group">
-      <h3> <%= item.title %><span class="small"> By <a href="/products/<%= item.shortname %>"> <%= item.name %></a></span>
+      <h3> <%= item.title %><span class="small"> By <src="/products/<%= item.shortname %>"> <%= item.name %></span>
        </h3>
-      <p> <a href="/products/<%= item.shortname %>"><img class="product" src="/images/products/<%= item.shortname %>_tn.jpg"
-      alt="Photo of <%= item.name %>"></a>
+      <p> <src="/products/<%= item.shortname %>"><img class="product" src="/images/products/<%= item.shortname %>_tn.jpg"
+      alt="Photo of <%= item.name %>">
       <% if(page!='home') { %>
          <%  if(page ==='productList') { %>
             <%- item.summary %>

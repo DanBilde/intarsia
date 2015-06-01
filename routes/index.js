@@ -191,7 +191,7 @@ router.get('/api/product/:id', function (req, res) {
 
   })
   .delete('/api/product/:id', function (req, res) {
-    return db.product.remove({
+    return db.products.remove({
       _id: mongojs.ObjectId(req.params.id)
     }, function (err) {
       if (err) {

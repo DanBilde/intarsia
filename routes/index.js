@@ -86,6 +86,21 @@ router.get('/', function (req, res) {
   });
 });
 
+router.get('/da', function (req, res) {
+  var myArtwork = [];
+  var myProducts = [];
+  myProducts = appdata.products;
+  appdata.products.forEach(function (item) {
+    myArtwork = myArtwork.concat(item.artwork);
+  });
+  res.render('da', {
+    title: 'Hjem',
+    artwork: myArtwork,
+    products: myProducts,
+    page: 'hjem'
+  });
+});
+
 /* Get Products page */
 router.get('/products', function (req, res) {
   var myArtwork = [];
@@ -191,7 +206,7 @@ router.get('/api/product/:id', function (req, res) {
 
   })
   .delete('/api/product/:id', function (req, res) {
-    return db.product.remove({
+    return db.products.remove({
       _id: mongojs.ObjectId(req.params.id)
     }, function (err) {
       if (err) {
@@ -207,3 +222,6 @@ router.get('/api/product/:id', function (req, res) {
   });
 
 module.exports = router;
+
+
+// openssl req -x509 -nodes -days 365 -newkey rsa:1024 -out my.crt -keyout my.key

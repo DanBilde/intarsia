@@ -6,21 +6,21 @@
     "shortname" : "Ursula_Skovsted",
     "summary" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec placerat arcu. Nullam a odio vitae ex pharetra malesuada a vel magna. Donec pretium augue non ante elementum auctor. Nullam sit amet suscipit mauris. Ut ultricies convallis tempus. Pellentesque id tincidunt quam. Morbi ultricies quam nisi, quis condimentum est consequat et. Nunc pellentesque nisi quis augue consequat fermentum. Ut venenatis leo sem, ut tincidunt elit efficitur eget.",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec placerat arcu. Nullam a odio vitae ex pharetra malesuada a vel magna. Donec pretium augue non ante elementum auctor. Nullam sit amet suscipit mauris. Ut ultricies convallis tempus. Pellentesque id tincidunt quam. Morbi ultricies quam nisi, quis condimentum est consequat et. Nunc pellentesque nisi quis augue consequat fermentum. Ut venenatis leo sem, ut tincidunt elit efficitur eget.Aliquam erat volutpat. Duis nec tortor tempus, condimentum justo eu, tristique augue. Quisque ut massa faucibus, laoreet arcu ut, maximus urna. Integer tempus porta metus eu placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed suscipit diam quis odio fringilla efficitur. Praesent ultrices a turpis sed tempor. Donec lobortis risus varius, tincidunt nibh vel, congue dui. Nulla placerat felis quis neque auctor pretium ut sed lacus. In a consectetur eros. Donec laoreet commodo tellus, et posuere nulla volutpat blandit.</p>",
-    "artwork": ["Lorenzo_Garcia_01_tn.jpg", "Lorenzo_Garcia_02_tn.jpg", "Lorenzo_Garcia_03_tn.jpg", "Lorenzo_Garcia_04_tn.jpg"]
+    "artwork": ["Ursula_figure_tn.jpg", "Ursula_figuretwo_tn.jpg","Ursula_figurethree_tn.jpg"]
   },{
     "title" : "Another table",
     "name": "Ursula Skovsted",
     "shortname" : "Ursula_Skovsted",
     "summary" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec placerat arcu. Nullam a odio vitae ex pharetra malesuada a vel magna. Donec pretium augue non ante elementum auctor. Nullam sit amet suscipit mauris. Ut ultricies convallis tempus. Pellentesque id tincidunt quam. Morbi ultricies quam nisi, quis condimentum est consequat et. Nunc pellentesque nisi quis augue consequat fermentum. Ut venenatis leo sem, ut tincidunt elit efficitur eget.",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec placerat arcu. Nullam a odio vitae ex pharetra malesuada a vel magna. Donec pretium augue non ante elementum auctor. Nullam sit amet suscipit mauris. Ut ultricies convallis tempus. Pellentesque id tincidunt quam. Morbi ultricies quam nisi, quis condimentum est consequat et. Nunc pellentesque nisi quis augue consequat fermentum. Ut venenatis leo sem, ut tincidunt elit efficitur eget.Aliquam erat volutpat. Duis nec tortor tempus, condimentum justo eu, tristique augue. Quisque ut massa faucibus, laoreet arcu ut, maximus urna. Integer tempus porta metus eu placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed suscipit diam quis odio fringilla efficitur. Praesent ultrices a turpis sed tempor. Donec lobortis risus varius, tincidunt nibh vel, congue dui. Nulla placerat felis quis neque auctor pretium ut sed lacus. In a consectetur eros. Donec laoreet commodo tellus, et posuere nulla volutpat blandit.</p>",
-    "artwork": ["Lorenzo_Garcia_01_tn.jpg", "Lorenzo_Garcia_02_tn.jpg", "Lorenzo_Garcia_03_tn.jpg", "Lorenzo_Garcia_04_tn.jpg"]
+    "artwork": ["Ursula_figurefour_tn.jpg"]
   },{
     "title" : "Third table",
     "name": "Ursula Skovsted",
     "shortname" : "Ursula_Skovsted",
     "summary" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec placerat arcu. Nullam a odio vitae ex pharetra malesuada a vel magna. Donec pretium augue non ante elementum auctor. Nullam sit amet suscipit mauris. Ut ultricies convallis tempus. Pellentesque id tincidunt quam. Morbi ultricies quam nisi, quis condimentum est consequat et. Nunc pellentesque nisi quis augue consequat fermentum. Ut venenatis leo sem, ut tincidunt elit efficitur eget.",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec placerat arcu. Nullam a odio vitae ex pharetra malesuada a vel magna. Donec pretium augue non ante elementum auctor. Nullam sit amet suscipit mauris. Ut ultricies convallis tempus. Pellentesque id tincidunt quam. Morbi ultricies quam nisi, quis condimentum est consequat et. Nunc pellentesque nisi quis augue consequat fermentum. Ut venenatis leo sem, ut tincidunt elit efficitur eget.Aliquam erat volutpat. Duis nec tortor tempus, condimentum justo eu, tristique augue. Quisque ut massa faucibus, laoreet arcu ut, maximus urna. Integer tempus porta metus eu placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed suscipit diam quis odio fringilla efficitur. Praesent ultrices a turpis sed tempor. Donec lobortis risus varius, tincidunt nibh vel, congue dui. Nulla placerat felis quis neque auctor pretium ut sed lacus. In a consectetur eros. Donec laoreet commodo tellus, et posuere nulla volutpat blandit.</p>",
-    "artwork": ["Lorenzo_Garcia_01_tn.jpg", "Lorenzo_Garcia_02_tn.jpg", "Lorenzo_Garcia_03_tn.jpg", "Lorenzo_Garcia_04_tn.jpg"]
+    "artwork": ["Ursula_figurefive_tn.jpg"]
   }],
 
   "social" : [{
@@ -38,8 +38,8 @@
   }],
 
   "exposition" : {
-    "date": "Thursday, March 27th",
-    "time": "6-9pm",
+    "date": "27. august",
+    "time": "18:00-21:00",
     "where": {
       "name": "Intarsia Workshop",
       "img": "/images/misc/intarsiaworkshop.jpg",
